@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Based off of this template: https://getbootstrap.com/docs/4.1/examples/offcanvas/ -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Welcome to the 2025 Bellairs Workshop on Causality, an academic event organized by Alexandre Drouin and Perouz Taslakian. Join us for in-depth discussions on causal inference and machine learning, held at the Bellairs Research Institute of McGill University in Barbados." />
+    <meta name="author" content="Alexandre Drouin, Perouz Taslakian" />
+    <meta name="keywords" content="Bellairs Workshop on Causality, causality, causal representation learning, causal inference, machine learning, representation learning, computer science, academic event, Bellairs Research Institute, McGill University, Barbados" />
+    <meta name="geo.region" content="BB" />
+    <meta name="geo.placename" content="Barbados" />
+    <meta name="geo.position" content="13.2094;-59.5929" />
+    <meta name="ICBM" content="13.2094, -59.5929" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4QXV9B2MS6"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-4QXV9B2MS6');
+    </script>
+
+    <title>Bellairs Workshop on Causality</title>
+    <link rel="icon" type="img/gif/png" href="img/favicon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <style type="text/css">
+        .text-white-50 {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .bg-color {
+            background-color: #315cd3;
+        }
+
+        .border-bottom {
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .box-shadow {
+            box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+        }
+
+        .lh-100 {
+            line-height: 1;
+        }
+
+        .lh-125 {
+            line-height: 1.25;
+        }
+
+        .lh-150 {
+            line-height: 1.5;
+        }
+
+        .jumbotron-billboard .img {
+            margin-bottom: 0px;
+            color: #fff;
+            background: #fff url("img/purple_beach.jpg") top center no-repeat;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .jumbotron h1 {
+            margin-top: 0;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 800;
+        }
+
+        .jumbotron p {
+            color: rgb(78, 78, 78);
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: 600;
+        }
+
+        .jumbotron {
+            position: relative;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .jumbotron .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        @media screen and (max-width: 768px) {
+            .jumbotron {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+        }
+
+        .jumbotron .graphic {
+            width: 30%;
+            padding-top: 12px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .jumbotron .graphic {
+                width: 70%;
+                padding-top: 12px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .jumbotron-heading {
+                font-size: 30px;
+            }
+        }
+
+        .anchoritem {
+            display: block;
+            padding-top: 4rem;
+            margin-top: -4rem;
+        }
+
+        .schedule {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .list-inline li {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .list-inline img {
+            object-fit: cover;
+        }
+
+        .map-container {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+        }
+
+        .map-container iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbarCollapse" class="bg-light" style="min-height: 75rem;margin-top:3rem;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">BCL 2025</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#abstract" class="nav-link">Abstract</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#attendees" class="nav-link">Participants</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#goals" class="nav-link">Goals</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="#photo-gallery" class="nav-link">Photo Gallery</a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="#program" class="nav-link">Program</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#logistics" class="nav-link">Logistics</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a href="#organizers" class="nav-link">Organizers</a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main">
+        <section class="jumbotron text-center jumbotron-billboard">
+            <!--padding-bottom:0;-->
+            <div class="img"></div>
+            <div class="container">
+                <br>
+                <!--
+                <h3 class="jumbotron-heading" style="color: #85929E;">
+		-->
+                <h3 class="jumbotron-heading" style="color: #FFFFFF;">
+                    Welcome to the Fourth
+                </h3>
+                <br>
+                <h1 class="jumbotron-heading" style="color: #FFFFFF;">
+                    Bellairs Workshop on Causality
+                </h1>
+                <h3 class="jumbotron-heading" style="color: #FFFFFF; font-style: italic;">
+                    Causality in the Era of Foundation Models
+                </h3>
+                <br>
+                <h4 class="jumbotron-heading" style="color: #FFFFFF; ">
+                    February 14-21, 2025
+                </h4>
+                <br>
+            </div>
+        </section>
+        <div class="container">
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="abstract">
+                    Abstract
+                </h5>
+                <div class="media text-muted pt-3">
+                    <p class="media-body pb-1 mb-0 medium lh-125">
+                        The development of foundation models, particularly large language models (LLMs), has attracted a flurry of research 
+                        activity in machine learning. From the lens of causality, it is perplexing to see models that generalize well to all 
+                        kinds of settings and even domains. What is it that these models learn that grants them this flexibility? Beyond that, 
+                        causal inference, the science of acting based on data, is gaining relevance to these research directions. In fact, 
+                        LLMs are now being used as reasoning engines in agents that act in the real world. How can we trust these agents to 
+                        plan correctly when they are trained only on observational data from the Internet? Are they even able to foresee the 
+                        effect of actions?  The intersection of causality and foundation models remains largely unexplored. This workshop aims 
+                        to explore this intersection, considering what the field of causality can contribute to these research directions and 
+                        how recent advancements in foundation models can benefit the field of causality.
+                    </p>
+                </div>
+                <div class="text-muted pt-3">
+                    Topics of interest include, but are not limited to:
+                    <ul>
+                        <li>Causal representation learning</li>
+                        <li>Reusable mechanisms and their ties to causality</li>
+                        <li>Mechanisms of generalization in foundation models</li>
+                        <li>Causal reasoning in large language models</li>
+                        <li>Causal discovery assisted by foundation models</li>
+                    </ul>
+                </div>
+                <div class="media text-muted pt-3">
+                    <p class="media-body pb-1 mb-0 medium lh-125">
+                        This is a sequel to the <a href="https://www.cs.mcgill.ca/~denis/barbados2022/index.html">2022</a>, <a href="https://bclworkshop.github.io/2023/">2023</a>, and <a href="https://bclworkshop.github.io/2024/">2024</a> workshops.
+                    </p>
+                </div>
+            </div>
+
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="attendees">
+                    Participants
+                </h5>
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <div class="d-flex flex-column w-100">
+                        <ul class="list-inline" style="line-height: 25px; text-align: center;">
+
+                            <!-- <li>
+                                <a href="https://ahujak.github.io/" target="_blank">
+                                    <b><img src="people/kartik.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Kartik Ahuja</b>
+                                </a> <br />(FAIR)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://causalai.net/" target="_blank"><b><img src="people/barenboim.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Elias
+                                        Bareinboim</b></a> <br />(Columbia University)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://yoshuabengio.org/" target=" _blank"><b><img src="people/yoshua.png"
+                                            class="rounded-circle" width="150" height="150" /><br />Yoshua
+                                        Bengio</b></a> <br />(Mila)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://leon.bottou.org/" target="_blank"><b><img src="people/bottou.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Leon
+                                        Bottou</b></a> <br />(Facebook AI Research)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="http://www.cs.columbia.edu/~blei/" target="_blank"><b><img
+                                            src="people/blei.png" class="rounded-circle" width="150"
+                                            height="150" /><br />David M. Blei &dagger;
+                                    </b></a> <br />(Columbia University)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://philippe-brouillard.com/" target="_blank"><b><img
+                                            src="people/brouillard.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Philippe Brouillard
+                                    </b></a> <br />(Mila)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://scholar.google.com/citations?user=a3q4YxEAAAAJ&hl=en" target="_blank">
+                                    <b><img src="people/cohen.png" class="rounded-circle" width="150"
+                                            height="150" /><br />Taco Cohen</b>
+                                </a> <br />(Qualcomm AI Research)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://scholar.google.ca/citations?user=QdnjDj8AAAAJ&hl=en" target="_blank">
+                                    <b><img src="people/chapados.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Nicolas Chapados</b>
+                                </a> <br />(ServiceNow, Mila)
+                            </li> -->
+
+                            <li>
+                                <a href="https://www.alexdrouin.com" target="_blank"> <b><img src="people/alex.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Alexandre
+                                        Drouin*</b>
+                                </a> <br />(ServiceNow, Mila)
+                            </li>
+
+                            <!-- <li>
+                                <a href="http://www.its.caltech.edu/~fehardt/" target="_blank"><b><img
+                                            src="people/eberhardt.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Frederick Eberhardt</b></a> <br />(Caltech)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="http://www.gatsby.ucl.ac.uk/~gretton/" target="_blank"><b><img
+                                            src="people/gretton.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Arthur Gretton</b></a> <br />(UCL)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="http://kordinglab.com/" target="_blank"><b><img src="people/kording.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Konrad
+                                        Kording</b></a> <br />(UPenn)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://atticusg.github.io/" target="_blank"><b><img
+                                            src="people/atticus.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Atticus Geiger
+                                    </b></a> <br />(Stanford)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://lgresele.github.io/" target="_blank"><b><img src="people/luigi.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Luigi Gresele</b></a> <br />(U. of Copenhagen)
+                            </li>
+                            <li>
+                                <a href="https://jhartford.github.io" target="_blank"><b><img
+                                            src="https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=eBNK7SsAAAAJ&citpid=2"
+                                            class="rounded-circle" width="150" height="150" /><br />Jason Hartford
+                                    </b></a> <br />(Recursion)
+                            </li>
+
+
+                            <li>
+                                <a href="https://slachapelle.github.io/" target="_blank"><b><img
+                                            src="people/lachapelle.png" class="rounded-circle" width="150"
+                                            height="150" /><br />Sébastien Lachapelle
+                                    </b></a> <br />(Samsung / Mila)
+                            </li>
+
+                            <li>
+                                <a href="https://www.servicenow.com/research/author/alexandre-lacoste.html"
+                                    target="_blank"><b><img src="people/lacoste.webp" class="rounded-circle" width="150"
+                                            height="150" /><br />Alexandre Lacoste
+                                    </b></a> <br />(ServiceNow)
+                            </li>
+
+                            <li>
+                                <a href="https://phlippe.github.io/" target="_blank"><b><img
+                                            src="people/lippe.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Phillip Lippe
+                                    </b></a> <br />(U. of Amsterdam)
+                            </li>
+
+                            <li>
+                                <a href="https://www.francescolocatello.com/" target="_blank"><b><img
+                                            src="people/francesco.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Francesco Locatello
+                                    </b></a> <br />(ISTA)
+                            </li>
+
+                            <li>
+                                <a href="https://saramagliacane.github.io/" target="_blank"><b><img
+                                            src="people/magliacane.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Sara Magliacane
+                                    </b></a> <br />(U. of Amsterdam)
+                            </li>
+
+                            <li>
+                                <a href="https://www.gemma-moran.com/" target="_blank"><b><img
+                                            src="people/gemma.png" class="rounded-circle" width="150"
+                                            height="150" /><br />Gemma Moran
+                                    </b></a> <br />(Rutgers University)
+                            </li>
+
+                            <li>
+                                <a href="http://www.krikamol.org/" target="_blank"><b><img src="people/muandet.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Krikamol Muandet
+                                    </b></a> <br />(CISPA)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://www.vanderschaar-lab.com/prof-mihaela-van-der-schaar/"
+                                    target="_blank"><b><img
+                                            src="https://www.vanderschaar-lab.com/wp-content/uploads/2020/06/Mihaela_photo_sq.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Mihaela van der
+                                        Schaar</b></a> <br />(U of Cambridge)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://www.is.mpg.de/~bs" target="_blank"><b><img src="people/bscholkopf.png"
+                                            class="rounded-circle" width="150" height="150" /><br />Bernhard
+                                        Sch&ouml;lkopf</b></a> <br />(Max Planck
+                                Institute)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://shalit.net.technion.ac.il/people/" target="_blank"><b><img
+                                            src="people/shalit.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Uri Shalit</b></a> <br />(Technion)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://scholar.google.com/citations?user=Nh3BtpUAAAAJ" target="_blank"><b><img
+                                            src="people/squires.png" class="rounded-circle" width="150"
+                                            height="150" /><br />Chandler Squires</b></a> <br />(MIT)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://www.dsridhar.com/" target="_blank"><b><img src="people/dhanya.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Dhanya
+                                        Sridhar</b></a> <br />(Mila)
+                            </li> -->
+
+                            <li>
+                                <a href="https://scholar.google.ca/citations?user=LJ7gHkQAAAAJ" target="_blank"><b><img
+                                            src="people/perouz.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Perouz
+                                        Taslakian*</b></a> <br />(ServiceNow)
+                            </li>
+
+                            <!-- <li>
+                                <a href="https://www.cs.mcgill.ca/~denis/" target="_blank"> <b><img
+                                            src="people/denis.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Denis Therien</b>
+                                </a> <br />(ServiceNow)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://sites.google.com/view/softriant/home" target="_blank"><b><img
+                                            src="people/triantafillou.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Sofia Triantafillou
+                                    </b></a> <br />(U. of Crete)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="http://www.victorveitch.com/" target="_blank"><b><img src="people/veitch.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Victor Veitch
+                                    </b></a> <br />(U. of Chicago, Google)
+                            </li>
+
+                            <li>
+                                <a href="https://sites.google.com/view/julius-von-kuegelgen/home"
+                                    target="_blank"><b><img src="people/julius.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Julius von Kügelgen
+                                    </b></a> <br />(Max Planck Institute)
+                            </li>
+
+                            <li>
+                                <a href="https://yixinwang.github.io/" target="_blank"><b><img src="people/yixin.png"
+                                            class="rounded-circle" width="150" height="150" /><br />Yixin Wang
+                                    </b></a> <br />(U. of Michigan)
+                            </li>
+
+                            <li>
+                                <a href="https://lids.mit.edu/people/students/vicky-jiaqi-zhang" target="_blank"><b><img
+                                            src="people/vicky.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Jiaqi Zhang
+                                    </b></a> <br />(MIT)
+                            </li> -->
+
+                            <!-- <li>
+                                <a href="https://www.is.mpg.de/~bs" target="_blank"><b><img src="people/bscholkopf.png"
+                                            class="rounded-circle" width="150" height="150" /><br />Bernhard
+                                        Sch&ouml;lkopf</b></a> <br />(Max Planck
+                                Institute)
+                            </li> -->
+                            
+                            <!-- <li>
+                                <a href="https://danruxu.wordpress.com/danru-xu/" target="_blank"><b><img src="people/danru.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Danru Xu</b></a> <br />(U. of Amsterdam)
+                            </li>
+
+                            <li>
+                                <a href="https://scholar.google.com/citations?user=vOJUvb0AAAAJ&hl=en" target="_blank"><b><img src="people/dingling.jpg"
+                                            class="rounded-circle" width="150" height="150" /><br />Dingling Yao</b></a> <br />(Max Planck Institute)
+                            </li>
+
+                            <li>
+                                <a href="https://www.servicenow.com/research/author/valentina-zantedeschi.html"
+                                    target="_blank"><b><img src="people/valentina.jpg" class="rounded-circle" width="150"
+                                            height="150" /><br />Valentina Zantedeschi
+                                    </b></a> <br />(ServiceNow, U. Laval)
+                            </li> -->
+
+                        </ul>
+
+                        * Organizers
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="goals">
+                    Goals
+                </h5>
+                <div class="media text-muted pt-3 pb-0 mb-0">
+                    <p class="media-body pb-0 mb-0 medium  lh-125 border-gray">
+                        The Bellairs Workshop on Causality is a gathering of researchers interested in and actively
+                        working
+                        on various aspects of causality. The workshop is meant to be a week filled with discussions,
+                        learnings, and ample opportunities for growing and strengthening our collaboration network. As
+                        such,
+                        we would consider that the workshop has fulfilled its goal if every attendee returns home:
+                    </p>
+                </div>
+                <div class="media text-muted pt-0 mt-0">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <ul>
+                        <li class="mt-2">
+                            having learned of new sub-areas to explore,
+                        </li>
+                        <li class="mt-2">
+                            completed their understanding of a topic,
+                        </li>
+                        <li class="mt-2">
+                            laid the foundations for a new research idea,
+                        </li>
+                        <li class="mt-2">
+                            established new collaborations, and
+                        </li>
+                        <li class="mt-2">
+                            made new friends in the field.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">Guidelines for open questions</strong><br />
+                        As our focus for this workshop is the development of new ideas and collaborations, we have
+                        planned
+                        the workshop activities so that a significant portion of the program is reserved for discussions
+                        around thought-provoking questions and open problems. For these discussion periods to be more
+                        animated and fruitful, we ask that participants bring with them the ideas that excite them and
+                        the
+                        questions that they would like to see addressed by the community. During these discussion
+                        sessions,
+                        every participant will have the opportunity to briefly present their questions and discussions
+                        on
+                        possible solutions or avenues for their resolution will follow.
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-0 mb-0">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium lh-125 border-gray">
+                        In order to facilitate the sharing of open questions and the exchange of ideas, we ask that
+                        participants observe the <u>following guidelines</u>:
+                    </p>
+                </div>
+                <div class="media text-muted pt-0 lh-125">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <ul>
+                        <li>
+                            Any open problem discussed at the workshop is not to be shared widely with the public
+                            without informing their initiator (the person who posed the question
+                            at the workshop) and their consent.
+                        </li>
+                        <li class="mt-3">
+                            If you wish to work on one of the presented questions after the workshop, we ask that you
+                            contact the initiator to make arrangements for collaboration.
+                        </li>
+                        <li class="mt-3">
+                            If you publish work that started at Bellairs, please consider acknowledging the Bellairs
+                            Workshop on Causality in your publication.
+                        </li>
+                    </ul>
+                </div>
+                <div class="media text-muted pt-0 mb-0">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium lh-125 border-gray">
+                        <a href="coming_soon.png" target="_blank">List of open
+                            problems</a> (authentication required)
+                    </p>
+                </div>
+            </div>
+
+            <!-- <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="photo-gallery">
+                    Photo Gallery
+                </h5>
+                <div id="carouselPhotos" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="photos/group_photo.png" alt="photo">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/1.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/2.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/3.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/4.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/5.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/6.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/7.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/8.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/9.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/10.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/11.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/12.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/13.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/14.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/15.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/16.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/17.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/18.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/19.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/20.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/21.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/22.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/23.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/24.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/25.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/26.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/27.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/28.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/29.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/30.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/31.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/32.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/33.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/34.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/35.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/36.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/37.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/38.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/39.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/40.png" alt="photo">
+                        </div>
+
+
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="photos/41.png" alt="photo">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselPhotos" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselPhotos" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+            </div> -->
+
+            <!-- <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="background-reading">
+                    Background Reading
+                </h5>
+                <div class="media text-muted pt-3">
+                    Participants are encouraged to consult the following references in advance of the workshop:
+                </div>
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <ul>
+                        <li>Schölkopf, Bernhard, et al. "Toward causal representation learning." Proceedings of the IEEE
+                            109.5 (2021): 612-634. <a href="https://ieeexplore.ieee.org/abstract/document/9363924"
+                                target="_blank">[link]</a>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="program">
+                    Program
+                </h5>
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        The workshop will take place from February 14th to February 21, 2025.
+                        Participants are expected to arrive on Friday, February 15th. Sessions will start early the next
+                        morning (Saturday)
+                        and the last session will be held on the evening of February 20th.
+                        Each day will consist of morning lectures on relevant topics (9:00-12:00), afternoons will be left open for
+                        collaboration
+                        and discussion, and evenings will be reserved for collaborative work towards open problems (7:00 pm - exhaustion).
+                        <br /><br />
+                    </p>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-sun" viewBox="0 0 32 32">
+                                    <path
+                                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 1 (morning)</h5>
+                                <p style="margin:0">Welcome from the organizers</p>
+                                <p style="margin:3"><span class="font-italic">Alexandre
+                                        Drouin, Perouz Taslakian</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-moon-stars" viewBox="0 0 32 32">
+                                    <path
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+                                    <path
+                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 1 (evening)</h5>
+                                <p style="margin:0">Open problem presentations</p>
+                                <p style="margin:0"><span class="font-italic">All participants</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-sun" viewBox="0 0 32 32">
+                                    <path
+                                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 2 (morning)</h5>
+                                <p style="margin:0">
+                                    Lectures (TBD)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-moon-stars" viewBox="0 0 32 32">
+                                    <path
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+                                    <path
+                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 2 (evening)</h5>
+                                <p style="margin:0">
+                                    Open Problem Working Session</p>
+                                <p style="margin:5">
+                                    <span class="font-italic">All participants</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-sun" viewBox="0 0 32 32">
+                                    <path
+                                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 3 (morning)</h5>
+                                <p style="margin:0">
+                                    Lectures (TBD)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-moon-stars" viewBox="0 0 32 32">
+                                    <path
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+                                    <path
+                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 3 (evening)</h5>
+                                <p style="margin:0">
+                                    Open Problem Progress Report + Working Session</p>
+                                <p style="margin:5">
+                                    <span class="font-italic">All participants</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-sun" viewBox="0 0 32 32">
+                                    <path
+                                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 4 (morning)</h5>
+                                <p style="margin:0">
+                                    Lectures (TBD)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-moon-stars" viewBox="0 0 32 32">
+                                    <path
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+                                    <path
+                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 4 (evening)</h5>
+                                <p style="margin:0">
+                                    Open Problem Working Session</p>
+                                <p style="margin:5">
+                                    <span class="font-italic">All participants</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-sun" viewBox="0 0 32 32">
+                                    <path
+                                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 5 (morning)</h5>
+                                <p style="margin:0">
+                                    Lectures (TBD)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-moon-stars" viewBox="0 0 32 32">
+                                    <path
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+                                    <path
+                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 5 (evening)</h5>
+                                <p style="margin:0">
+                                    Open Problem Progress Report + Working Session</p>
+                                <p style="margin:5">
+                                    <span class="font-italic">All participants</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-sun" viewBox="0 0 32 32">
+                                    <path
+                                        d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 6 (morning)</h5>
+                                <p style="margin:0">
+                                    Lectures (TBD)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="media">
+                            <div class="media-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                                    class="bi bi-moon-stars" viewBox="0 0 32 32">
+                                    <path
+                                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278zM4.858 1.311A7.269 7.269 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.316 7.316 0 0 0 5.205-2.162c-.337.042-.68.063-1.029.063-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286z" />
+                                    <path
+                                        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+                                </svg>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">Day 6 (evening)</h5>
+                                <p style="margin:0">
+                                    Closing Diner @ <a href="https://www.calmabarbados.com/" target="_blank">Calma Beach Club</a></p>
+                                <p style="margin:5">
+                                    <span class="font-italic">All participants</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="logistics">
+                    Logistics
+                </h5>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">Venue</strong>
+                        The workshop will be held at the Bellairs Research Institute of McGill University in Barbados,
+                        which
+                        provides the perfect environment for bringing together a small group of people in a quiet and
+                        casual setting. See it on the <a href="#map">map</a>.
+                    </p>
+                </div>
+                <!-- <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">Requirements to enter Barbados</strong>
+                        The most reliable source of information is <a
+                            href=https://www.visitbarbados.org/covid-19-travel-guidelines-2022>here</a>.
+                        For the moment, you need to show proof of vaccination or a valid PCR test and fill out an
+                        immigration form up to 72 hours prior to your arrival.
+                    </p>
+                </div> -->
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">Airport arrival</strong>
+                        Bellairs is about a 40 minute drive from the airport, and as many participants land around the
+                        same time on the same date,
+                        it often makes sense to share a taxi to the institute.
+                        To get to the institute, you can pick a taxi outside of the baggage claim area at BGI airport.
+                        If the driver does not know where the Bellairs institute is (they usually do), tell them it is
+                        beside Folkestone Marine Park in Holetown.
+                        Alternatively, we would be happy to arrange your transportation from the airport to Bellairs by
+                        booking a driver in advance,
+                        who will be waiting for you at the arrivals exit of BGI near the other taxis.
+                        To opt-in to this option, you need to indicate this on the Arrival Spreadsheet (please check
+                        your email for the link).
+
+                        In all cases, please <i>bring enough USD or BBD to pay for the trip</i>. Many taxis do not
+                        accept card payments.
+
+                    </p>
+                </div>
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">Arriving at Bellairs</strong>
+                        The premises are protected by a gate for which you will receive the password a few days in
+                        advance.
+                        Once you arrive, you will find your room assignments and get the key from a key box for which we
+                        will also communicate a password a few days in advance.
+                        <br><br>
+
+                        <u>IMPORTANT:</u> If you arrive or depart outside of the workshop dates (February 14-21), you need
+                        to book your own accommodation.
+                        It might be possible that Bellairs has available rooms for you to stay at during this period,
+                        but you must <a href=https://www.mcgill.ca/bellairs/facilities/accommodation>contact
+                            Bellairs</a> directly to book your accommodation <i>outside the workshop dates</i>.
+                        We cannot guarantee availability outside the dates assigned to our group.
+                    </p>
+                </div>
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">Accommodation</strong>
+                        The Bellairs research institute is located right on the beach in the Folkestone Marine Park.
+                        The facilities are minimalistic, but comfortable, and the beach is right outside the door. Given the
+                        limited number of rooms available, 
+                        <span style="text-decoration: underline;">most participants will need to be paired</span>.
+                        To get a sense of the premises, check out the <a
+                            href=https://www.mcgill.ca/bellairs/facilities/accommodation>Bellairs website</a> or take a
+                        look at the pictures from <a
+                            href=https://bclworkshop.github.io/2023/#photo-gallery>last year</a>.
+
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">Meals</strong>
+                        Buffet-style meals will be available on the first morning for breakfast and every day for dinner. 
+                        These will be served in the outdoor classroom from 8-9 am and 6-7 pm, respectively.
+                        You will be charged for these according to the number of nights you spend at Bellairs.
+                        For the subsequent breakfasts, we will buy groceries based on the preferences of participants, and
+                        the amount will be included in the registration fee. Lunch is on your own. 
+                        There are plenty of options nearby and we usually walk somewhere as a group.
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">What to bring</strong>
+                        In terms of clothing, you should take into consideration that the lecture hall is outdoors and
+                        that the weather will be quite hot.
+                        Do not forget to bring your bathing suit, beach towel, and snorkeling equipment since Bellairs
+                        is located right in front of a coral reef.
+                        You should also bring soap, shampoo, sunscreen, and mosquito repellent.
+                        Bringing ear plugs is also a good idea if you are a light sleeper as there can be noise from the nearby road or park in the morning.
+                    </p>
+                </div>
+
+                <div class="media text-muted pt-3">
+                    <img data-src="holder.js/32x32?theme=thumb&bg=e83e8c&fg=e83e8c&size=1" alt=""
+                        class="mr-2 rounded" />
+                    <p class="media-body pb-3 mb-0 medium  lh-125 border-gray">
+                        <strong class="d-block text-gray-dark">Currency</strong>
+                        Currency: The local currency is the Barbadian Dollar (BBD), but you can pay in USD everywhere (1
+                        USD ~ 2 BBD).
+                        You can pay by credit card almost everywhere, but it’s safe to carry cash.
+                        In fact, it is encouraged to bring some cash with you as many places (e.g. food carts and taxis)
+                        do not take payments with cards.
+                    </p>
+                </div>
+
+                <br>
+
+                <div id="map-container-google-1" class="z-depth-1-half map-container col-sm" style="height: 500px">
+                    <iframe
+                        src="https://maps.google.com/maps?q=mcgill+bellairs+holetown&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="my-3 p-3 bg-white rounded box-shadow"   >
+                    <img src="img/bellairs-map.png" width="600" />
+                </div>
+                <div class="my-3 p-3 bg-white rounded box-shadow">
+                    <div class="media text-muted pt-3">
+                        <p class="text-center media-body pb-1 mb-0 medium lh-125">
+                            For questions please contact <a href="mailto:alexandre.drouin@servicenow.com">
+                                Alexandre Drouin</a> or <a href="mailto:perouz@gmail.com">Perouz Taslakian</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
