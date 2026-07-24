@@ -154,6 +154,205 @@
             width: 100%;
             position: absolute;
         }
+
+        .photo-carousel {
+            position: relative;
+            width: 100%;
+            height: 560px;
+            margin-top: 1rem;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #111;
+            box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 576px) {
+            .photo-carousel {
+                height: 340px;
+            }
+        }
+
+        .photo-carousel-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.9s ease;
+            cursor: pointer;
+        }
+
+        .photo-carousel-img.active {
+            opacity: 1;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.1rem;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .carousel-arrow-prev {
+            left: 12px;
+        }
+
+        .carousel-arrow-next {
+            right: 12px;
+        }
+
+        .carousel-counter {
+            position: absolute;
+            bottom: 12px;
+            right: 14px;
+            color: #fff;
+            font-size: 0.8rem;
+            background: rgba(0, 0, 0, 0.35);
+            padding: 2px 8px;
+            border-radius: 10px;
+            z-index: 5;
+            letter-spacing: 0.02em;
+        }
+
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 10, 15, 0.92);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 92vw;
+            max-height: 88vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lightbox-content img {
+            max-width: 92vw;
+            max-height: 80vh;
+            border-radius: 6px;
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+            animation: lightboxFade 0.25s ease;
+        }
+
+        @keyframes lightboxFade {
+            from {
+                opacity: 0;
+                transform: scale(0.97);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .lightbox-counter {
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.02em;
+        }
+
+        .lightbox-close,
+        .lightbox-prev,
+        .lightbox-next {
+            position: fixed;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+            z-index: 2001;
+        }
+
+        .lightbox-close:hover,
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-close {
+            top: 20px;
+            right: 20px;
+        }
+
+        .lightbox-prev {
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-next {
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 576px) {
+
+            .lightbox-prev,
+            .lightbox-next {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .lightbox-close {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+                top: 10px;
+                right: 10px;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+        }
     </style>
 </head>
 
@@ -641,228 +840,127 @@
                 </div>
             </div>
 
-            <!-- <div class="my-3 p-3 bg-white rounded box-shadow">
+            <div class="my-3 p-3 bg-white rounded box-shadow">
                 <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="photo-gallery">
                     Photo Gallery
                 </h5>
-                <div id="carouselPhotos" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="photos/group_photo.png" alt="photo">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/1.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/2.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/3.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/4.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/5.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/6.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/7.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/8.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/9.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/10.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/11.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/12.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/13.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/14.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/15.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/16.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/17.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/18.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/19.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/20.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/21.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/22.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/23.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/24.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/25.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/26.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/27.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/28.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/29.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/30.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/31.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/32.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/33.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/34.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/35.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/36.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/37.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/38.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/39.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/40.png" alt="photo">
-                        </div>
-
-
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="photos/41.png" alt="photo">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselPhotos" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselPhotos" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-            </div> -->
+                <div class="photo-carousel" id="photoCarouselViewport">
+                    <img id="carouselImgA" class="photo-carousel-img active" src="" alt="">
+                    <img id="carouselImgB" class="photo-carousel-img" src="" alt="">
+                    <button class="carousel-arrow carousel-arrow-prev" onclick="carouselNav(-1)" aria-label="Previous photo">&#10094;</button>
+                    <button class="carousel-arrow carousel-arrow-next" onclick="carouselNav(1)" aria-label="Next photo">&#10095;</button>
+                    <div class="carousel-counter" id="carouselCounter"></div>
+                </div>
+            </div>
+
+            <div id="photoLightbox" class="lightbox-overlay">
+                <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
+                <button class="lightbox-prev" onclick="navLightbox(-1)" aria-label="Previous photo">&#10094;</button>
+                <button class="lightbox-next" onclick="navLightbox(1)" aria-label="Next photo">&#10095;</button>
+                <div class="lightbox-content">
+                    <img id="lightboxImg" src="" alt="">
+                    <div id="lightboxCounter" class="lightbox-counter"></div>
+                </div>
+            </div>
+
+            <script>
+                (function () {
+                    var TOTAL = 43;
+                    var AUTOPLAY_MS = 5000;
+                    var order = [];
+                    for (var i = 1; i <= TOTAL; i++) order.push(i);
+                    for (var i = order.length - 1; i > 0; i--) {
+                        var j = Math.floor(Math.random() * (i + 1));
+                        var tmp = order[i]; order[i] = order[j]; order[j] = tmp;
+                    }
+                    var pos = 0;
+                    var activeLayer = 0;
+                    var layers = [document.getElementById('carouselImgA'), document.getElementById('carouselImgB')];
+                    var viewport = document.getElementById('photoCarouselViewport');
+                    var carouselCounterEl = document.getElementById('carouselCounter');
+                    var overlay = document.getElementById('photoLightbox');
+                    var lightboxImgEl = document.getElementById('lightboxImg');
+                    var lightboxCounterEl = document.getElementById('lightboxCounter');
+                    var autoplayId;
+
+                    function srcFor(photoNum) {
+                        var n = (photoNum < 10 ? '0' : '') + photoNum;
+                        return 'photos/' + n + '.jpg';
+                    }
+
+                    function renderCarousel() {
+                        var photoNum = order[pos];
+                        var nextIndex = 1 - activeLayer;
+                        var nextLayer = layers[nextIndex];
+                        var curLayer = layers[activeLayer];
+                        nextLayer.src = srcFor(photoNum);
+                        nextLayer.alt = 'Workshop photo ' + photoNum;
+                        nextLayer.classList.add('active');
+                        curLayer.classList.remove('active');
+                        activeLayer = nextIndex;
+                        carouselCounterEl.textContent = (pos + 1) + ' / ' + TOTAL;
+                    }
+
+                    function renderLightbox() {
+                        var photoNum = order[pos];
+                        lightboxImgEl.src = srcFor(photoNum);
+                        lightboxImgEl.alt = 'Workshop photo ' + photoNum;
+                        lightboxCounterEl.textContent = (pos + 1) + ' / ' + TOTAL;
+                    }
+
+                    function goTo(delta) {
+                        pos = (pos + delta + TOTAL) % TOTAL;
+                        renderCarousel();
+                        if (overlay.classList.contains('active')) renderLightbox();
+                    }
+
+                    function stopAutoplay() {
+                        clearInterval(autoplayId);
+                    }
+
+                    function startAutoplay() {
+                        stopAutoplay();
+                        autoplayId = setInterval(function () { goTo(1); }, AUTOPLAY_MS);
+                    }
+
+                    window.carouselNav = function (delta) {
+                        goTo(delta);
+                        startAutoplay();
+                    };
+                    window.openLightbox = function () {
+                        renderLightbox();
+                        overlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                        stopAutoplay();
+                    };
+                    window.closeLightbox = function () {
+                        overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                        startAutoplay();
+                    };
+                    window.navLightbox = function (delta) {
+                        goTo(delta);
+                    };
+
+                    layers.forEach(function (layer) {
+                        layer.addEventListener('click', window.openLightbox);
+                    });
+                    overlay.addEventListener('click', function (e) {
+                        if (e.target === overlay) closeLightbox();
+                    });
+                    document.addEventListener('keydown', function (e) {
+                        if (!overlay.classList.contains('active')) return;
+                        if (e.key === 'Escape') closeLightbox();
+                        if (e.key === 'ArrowLeft') navLightbox(-1);
+                        if (e.key === 'ArrowRight') navLightbox(1);
+                    });
+                    viewport.addEventListener('mouseenter', stopAutoplay);
+                    viewport.addEventListener('mouseleave', startAutoplay);
+
+                    renderCarousel();
+                    startAutoplay();
+                })();
+            </script>
 
             <!-- <div class="my-3 p-3 bg-white rounded box-shadow">
                 <h5 class="border-bottom border-gray pb-2 mb-0 anchoritem" id="background-reading">
