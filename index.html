@@ -882,6 +882,8 @@
                     var lightboxImgEl = document.getElementById('lightboxImg');
                     var lightboxCounterEl = document.getElementById('lightboxCounter');
                     var autoplayId;
+                    // Once the viewer navigates manually, autoplay stays off for good.
+                    var userTookControl = false;
 
                     function srcFor(photoNum) {
                         var n = (photoNum < 10 ? '0' : '') + photoNum;
@@ -920,12 +922,14 @@
 
                     function startAutoplay() {
                         stopAutoplay();
+                        if (userTookControl) return;
                         autoplayId = setInterval(function () { goTo(1); }, AUTOPLAY_MS);
                     }
 
                     window.carouselNav = function (delta) {
+                        userTookControl = true;
+                        stopAutoplay();
                         goTo(delta);
-                        startAutoplay();
                     };
                     window.openLightbox = function () {
                         renderLightbox();
@@ -939,6 +943,7 @@
                         startAutoplay();
                     };
                     window.navLightbox = function (delta) {
+                        userTookControl = true;
                         goTo(delta);
                     };
 
